@@ -38,7 +38,7 @@ namespace WebApi
             var url = new Uri("https://etkinlik.io/api/v1" + adres);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-ETKINLIK-TOKEN", this.Token);
+            request.Headers.Add("b9bd400caa73cf13af5ef43ba9d0f50b", this.Token);
             return (HttpWebResponse)request.GetResponse();
         }
 

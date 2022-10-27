@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebApi.Entity
+namespace WebApi.Models
 {
-    public class District
+    public class Semt
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public string slug { get; set; }
+
+        public string adi { get; set; }
     }
-
 }
-

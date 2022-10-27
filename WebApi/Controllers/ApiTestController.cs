@@ -30,6 +30,8 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
+        [Route("Etkinlik")]
+
         public ActionResult Etkinlik(EtkinlikFilter model)
         {
             EtkinlikListeConfig config = new EtkinlikListeConfig();
@@ -47,12 +49,16 @@ namespace WebApi.Controllers
         }
 
 
+        [HttpPost]
+        [Route("Kategori")]
         public ActionResult Kategori()
         {
             List<Kategori> kategoriler = client.KategoriService.GetList();
             return View(kategoriler);
         }
 
+        [HttpPost]
+        [Route("KategoriEtkinlik")]
         public ActionResult KategoriEtkinlik(string id)
         {
             EtkinlikListeConfig config = new EtkinlikListeConfig();
@@ -63,13 +69,16 @@ namespace WebApi.Controllers
             return View("Etkinlik", response.kayitlar);
         }
 
+        [HttpPost]
+        [Route("Sehir")]
         public ActionResult Sehir()
         {
             List<Sehir> sehirler = client.SehirService.GetList();
             return View(sehirler);
         }
 
-
+        [HttpPost]
+        [Route("SehirEtkinlik")]
         public ActionResult SehirEtkinlik(string ids)
         {
             EtkinlikListeConfig config = new EtkinlikListeConfig();
@@ -80,13 +89,15 @@ namespace WebApi.Controllers
             return View("Etkinlik", response.kayitlar);
         }
 
-
+        [HttpPost]
+        [Route("Tur")]
         public ActionResult Tur()
         {
             List<Tur> turler = client.TurService.GetList();
             return View(turler);
         }
-
+        [HttpPost]
+        [Route("TurEtkinlik")]
         public ActionResult TurEtkinlik(string id)
         {
             EtkinlikListeConfig config = new EtkinlikListeConfig();
@@ -97,14 +108,16 @@ namespace WebApi.Controllers
             return View("Etkinlik", response.kayitlar);
         }
 
-
+        [HttpPost]
+        [Route("Ilce")]
         public ActionResult Ilce(int id)
         {
             List<Ilce> ilceler = client.IlceService.GetListBySehirId(id);
             return View(ilceler);
         }
 
-
+        [HttpPost]
+        [Route("Semt")]
         public ActionResult Semt(int id)
         {
             List<Semt> semtler = client.SemtService.GetListByIlceId(id);

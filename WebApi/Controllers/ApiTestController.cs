@@ -17,17 +17,11 @@ namespace WebApi.Controllers
             new WebApi.ApiClient("b9bd400caa73cf13af5ef43ba9d0f50b");
 
 
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        public ActionResult Etkinlik()
-        {
-            EtkinlikListeResponse response = client.EtkinlikService.GetList();
-            ViewBag.sayfalama = response.sayfalama;
-            return View(response.kayitlar);
-        }
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
         [HttpPost]
         [Route("Etkinlik")]
@@ -48,6 +42,12 @@ namespace WebApi.Controllers
             return View(response.kayitlar);
         }
 
+        //[HttpPost(Name ="Kategori")]
+        //public ActionResult Kategori()
+        //{
+        //    List<Kategori> kategoriler = client.KategoriService.GetList();
+        //    return View(kategoriler);
+        //}
 
         [HttpPost]
         [Route("Kategori")]
@@ -64,10 +64,10 @@ namespace WebApi.Controllers
             EtkinlikListeConfig config = new EtkinlikListeConfig();
             config.setKategoriIds(id);
 
-            EtkinlikListeResponse response = client.EtkinlikService.GetList(config);
-            ViewBag.sayfalama = response.sayfalama;
-            return View("Etkinlik", response.kayitlar);
-        }
+        //    EtkinlikListeResponse response = client.EtkinlikService.GetList(config);
+        //    ViewBag.sayfalama = response.sayfalama;
+        //    return View("Etkinlik", response.kayitlar);
+        //}
 
         [HttpPost]
         [Route("Sehir")]
@@ -79,15 +79,11 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("SehirEtkinlik")]
-        public ActionResult SehirEtkinlik(string ids)
-        {
-            EtkinlikListeConfig config = new EtkinlikListeConfig();
-            config.setSehirIds(ids);
+        //    EtkinlikListeResponse response = client.EtkinlikService.GetList(config);
+        //    ViewBag.sayfalama = response.sayfalama;
+        //    return View("Etkinlik", response.kayitlar);
+        //}
 
-            EtkinlikListeResponse response = client.EtkinlikService.GetList(config);
-            ViewBag.sayfalama = response.sayfalama;
-            return View("Etkinlik", response.kayitlar);
-        }
 
         [HttpPost]
         [Route("Tur")]
@@ -103,10 +99,10 @@ namespace WebApi.Controllers
             EtkinlikListeConfig config = new EtkinlikListeConfig();
             config.setTurIds(id);
 
-            EtkinlikListeResponse response = client.EtkinlikService.GetList(config);
-            ViewBag.sayfalama = response.sayfalama;
-            return View("Etkinlik", response.kayitlar);
-        }
+        //    EtkinlikListeResponse response = client.EtkinlikService.GetList(config);
+        //    ViewBag.sayfalama = response.sayfalama;
+        //    return View("Etkinlik", response.kayitlar);
+        //}
 
         [HttpPost]
         [Route("Ilce")]
